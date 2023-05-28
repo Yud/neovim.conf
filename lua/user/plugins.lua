@@ -47,20 +47,22 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim" -- Easily comment stuff
+  use {
+    'numToStr/Comment.nvim', -- Easily comment stuff
+    tag = 'v0.6.1',
+  }
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use "moll/vim-bbye" -- delete buffers (close files) without closing your windows or messing up your layout
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
+  use "lewis6991/impatient.nvim" -- Speed up loading Lua modules in Neovim to improve startup time.
+  use "lukas-reineke/indent-blankline.nvim" 
+  use "goolord/alpha-nvim" -- a fast and fully programmable greeter for neovim
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
-  use "folke/tokyonight.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -71,8 +73,9 @@ return packer.startup(function(use)
   use "rose-pine/neovim"
   use "shaunsingh/moonlight.nvim"
   use "bluz71/vim-nightfly-guicolors"
-  use "rose-pine/neovim"
   use "NLKNguyen/papercolor-theme"
+  use "sam4llis/nvim-tundra"
+  use "folke/tokyonight.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -96,7 +99,6 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
 
-
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -106,6 +108,10 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "tpope/vim-fugitive"
+
+  -- Linters and formatters
+  use "sbdchd/neoformat"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
