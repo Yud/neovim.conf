@@ -62,12 +62,13 @@ keymap("n", "<C-p>", ":NvimTreeToggle<cr>", opts)
 -- Telescope --
 keymap("n", "<C-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<c-l>", "<cmd>Telescope oldfiles<cr>", opts)
 
 --- Comment ---
 -- # NORMAL mode
 -- Linewise toggle current line using C-/
-vim.keymap.set('n', '<C-_>', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>')
+vim.keymap.set('n', '<C-]>', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>')
 -- # VISUAL mode
 -- Linewise toggle using C-/
-vim.keymap.set('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
-
+vim.keymap.set('x', '<C-]>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
